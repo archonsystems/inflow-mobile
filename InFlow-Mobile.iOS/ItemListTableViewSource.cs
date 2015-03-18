@@ -7,7 +7,6 @@ using Foundation;
 using InFlow_Mobile.Core.ViewModels;
 using ReactiveUI;
 using UIKit;
-using System.Windows.Input;
 
 namespace InFlow_Mobile.iOS
 {

@@ -89,6 +89,7 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <InterfaceDefinition Include="ItemList.storyboard" />
+    <InterfaceDefinition Include="ItemDetails.storyboard" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +163,10 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="FromStoryboardAttribute.cs" />
     <Compile Include="InitializeDatabaseService.cs" />
+    <Compile Include="ItemDetailsViewController.cs" />
+    <Compile Include="ItemDetailsViewController.designer.cs">
+      <DependentUpon>ItemDetailsViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemListTableViewSource.cs" />
     <Compile Include="ItemListViewController.cs" />
     <Compile Include="ItemListViewController.designer.cs">

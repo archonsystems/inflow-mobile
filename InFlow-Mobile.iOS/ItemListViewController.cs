@@ -16,21 +16,14 @@ namespace InFlow_Mobile.iOS
     [FromStoryboard("ItemList")]
     public partial class ItemListViewController : BaseView
     {
-        private ItemListTableViewSource<Item> _viewSource;
-
-        static bool UserInterfaceIdiomIsPhone
-        {
-            get { return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone; }
-        }
-
         public ItemListViewController(IntPtr handle)
             : base(handle)
         {
         }
 
-        protected new ItemListViewModel ViewModel { get { return (ItemListViewModel)base.ViewModel; } }        
+        private ItemListTableViewSource<Item> _viewSource;
 
-        #region View lifecycle
+        protected new ItemListViewModel ViewModel { get { return (ItemListViewModel)base.ViewModel; } }        
 
         public override async void ViewDidLoad()
         {
@@ -43,10 +36,6 @@ namespace InFlow_Mobile.iOS
                 .ObserveOn(RxApp.MainThreadScheduler)
                 .Subscribe(items => _viewSource.ItemsSource = ViewModel.SearchResults);
 
-            //var set = this.CreateBindingSet<ItemListViewController, ItemListViewModel>();
-            //set.Bind(viewSource).To(vm => vm.SearchResults);
-            //set.Apply();
-
             Observable.FromEventPattern<UISearchBarTextChangedEventArgs>(h => SearchBar.TextChanged += h, h => SearchBar.TextChanged -= h)
                 .Subscribe(e => ViewModel.SearchQuery = e.EventArgs.SearchText);
 
@@ -56,21 +45,11 @@ namespace InFlow_Mobile.iOS
                 ViewModel.ShowDetailsCommand.Execute(null);
             });
 
+            var set = this.CreateBindingSet<ItemListViewController, ItemListViewModel>();
+            set.Bind(AddNewButton).To(vm => vm.AddNewCommand);
+            set.Apply();
+
             await ViewModel.InitializeAsync();
-
-            //Observable.FromEventPattern<AdapterView.ItemClickEventArgs>(h => _listView.ItemClick += h, h => _listView.ItemClick -= h)
-            //.Subscribe(e =>
-            //{
-            //    ViewModel.SelectedProdId = (int)e.EventArgs.Id;
-            //    ViewModel.ShowDetailsCommand.Execute(null);
-            //});
-
-            //await ViewModel.InitializeAsync();
-        }
-
-        public override void ViewWillAppear(bool animated)
-        {
-            base.ViewWillAppear(animated);
         }
 
         public override async void ViewDidAppear(bool animated)
@@ -80,16 +59,5 @@ namespace InFlow_Mobile.iOS
             await ViewModel.ExplicitSearch.ExecuteAsync(null);
         }
 
-        public override void ViewWillDisappear(bool animated)
-        {
-            base.ViewWillDisappear(animated);
-        }
-
-        public override void ViewDidDisappear(bool animated)
-        {
-            base.ViewDidDisappear(animated);
-        }
-
-        #endregion
     }
 }

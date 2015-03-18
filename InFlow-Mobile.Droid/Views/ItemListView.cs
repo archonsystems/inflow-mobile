@@ -16,9 +16,6 @@ using Android.OS;
 
 namespace InFlow_Mobile.Droid.Views
 {
-    /// <summary>
-    /// Defines the MainView type.
-    /// </summary>
     [Activity(Label = "Item List")]
     public class ItemListView : BaseView
     {
