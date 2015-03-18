@@ -3,6 +3,7 @@
 //    Defines the AppDelegate type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace InFlow_Mobile.iOS
 {
     using Cirrious.CrossCore;

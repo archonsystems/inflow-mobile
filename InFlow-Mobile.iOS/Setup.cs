@@ -3,6 +3,9 @@
 //    Defines the Setup type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
+using Cirrious.MvvmCross.Touch.Views;
+
 namespace InFlow_Mobile.iOS
 {
     using Cirrious.MvvmCross.Touch.Platform;
@@ -31,6 +34,11 @@ namespace InFlow_Mobile.iOS
         protected override IMvxApplication CreateApp()
         {
             return new Core.App();
+        }
+
+        protected override IMvxTouchViewsContainer CreateTouchViewsContainer()
+        {
+            return new StoryboardViewsContainer();
         }
     }
 }

@@ -3,6 +3,9 @@
 //    Defines the BaseView type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
+using System;
+
 namespace InFlow_Mobile.iOS.Views
 {
     using Cirrious.MvvmCross.Touch.Views;
@@ -19,6 +22,11 @@ namespace InFlow_Mobile.iOS.Views
         /// Initializes a new instance of the <see cref="BaseView" /> class.
         /// </summary>
         protected BaseView()
+        {
+            this.Initialize();
+        }
+
+        protected BaseView(IntPtr handle) : base(handle)
         {
             this.Initialize();
         }
