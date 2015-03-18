@@ -27,11 +27,17 @@
                                 <rect key="frame" x="-1" y="20" width="320" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="10" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" restorationIdentifier="ItemListTableView">
+                                <rect key="frame" x="20" y="110" width="280" height="438"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes/>
+                            </tableView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="AddNewButton" destination="5" id="name-outlet-5"/>
                         <outlet property="SearchBar" destination="6" id="name-outlet-6"/>
+                        <outlet property="ItemListTableView" destination="10" id="name-outlet-10"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

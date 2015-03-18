@@ -20,6 +20,10 @@ namespace InFlow_Mobile.iOS
 
 		[Outlet]
 		[GeneratedCode ("iOS Designer", "1.0")]
+		UITableView ItemListTableView { get; set; }
+
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
 		UISearchBar SearchBar { get; set; }
 
 		void ReleaseDesignerOutlets ()
@@ -27,6 +31,10 @@ namespace InFlow_Mobile.iOS
 			if (AddNewButton != null) {
 				AddNewButton.Dispose ();
 				AddNewButton = null;
+			}
+			if (ItemListTableView != null) {
+				ItemListTableView.Dispose ();
+				ItemListTableView = null;
 			}
 			if (SearchBar != null) {
 				SearchBar.Dispose ();

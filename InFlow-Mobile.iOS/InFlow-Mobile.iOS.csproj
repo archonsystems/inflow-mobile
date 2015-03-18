@@ -161,6 +161,8 @@
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
     <Compile Include="FromStoryboardAttribute.cs" />
+    <Compile Include="InitializeDatabaseService.cs" />
+    <Compile Include="ItemListTableViewSource.cs" />
     <Compile Include="ItemListViewController.cs" />
     <Compile Include="ItemListViewController.designer.cs">
       <DependentUpon>ItemListViewController.cs</DependentUpon>

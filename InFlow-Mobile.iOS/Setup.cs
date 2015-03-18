@@ -1,17 +1,12 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <summary>
-//    Defines the Setup type.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
+using Cirrious.CrossCore;
 using Cirrious.MvvmCross.Touch.Views;
+using InFlow_Mobile.Core;
+using Cirrious.MvvmCross.Touch.Platform;
+using Cirrious.MvvmCross.Touch.Views.Presenters;
+using Cirrious.MvvmCross.ViewModels;
 
 namespace InFlow_Mobile.iOS
 {
-    using Cirrious.MvvmCross.Touch.Platform;
-    using Cirrious.MvvmCross.Touch.Views.Presenters;
-    using Cirrious.MvvmCross.ViewModels;
-
     /// <summary>
     ///    Defines the Setup type.
     /// </summary>
@@ -33,6 +28,7 @@ namespace InFlow_Mobile.iOS
         /// <returns>An instance of IMvxApplication</returns>
         protected override IMvxApplication CreateApp()
         {
+            Mvx.RegisterSingleton<IInitializeService>(new InitializeDatabaseService());
             return new Core.App();
         }
 

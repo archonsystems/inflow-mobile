@@ -11,12 +11,11 @@ using Android.Widget;
 using Cirrious.MvvmCross.Binding.BindingContext;
 using InFlow_Mobile.Core.ViewModels;
 using ReactiveUI;
+using Android.App;
+using Android.OS;
 
 namespace InFlow_Mobile.Droid.Views
 {
-    using Android.App;
-    using Android.OS;
-
     /// <summary>
     /// Defines the MainView type.
     /// </summary>

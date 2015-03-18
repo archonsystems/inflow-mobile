@@ -1,19 +1,11 @@
-// --------------------------------------------------------------------------------------------------------------------
-// <summary>
-//    Defines the Setup type.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
 using Cirrious.CrossCore;
 using InFlow_Mobile.Core;
+using Android.Content;
+using Cirrious.MvvmCross.Droid.Platform;
+using Cirrious.MvvmCross.ViewModels;
 
 namespace InFlow_Mobile.Droid
 {
-    using Android.Content;
-
-    using Cirrious.MvvmCross.Droid.Platform;
-    using Cirrious.MvvmCross.ViewModels;
-
     /// <summary>
     ///    Defines the Setup type.
     /// </summary>
