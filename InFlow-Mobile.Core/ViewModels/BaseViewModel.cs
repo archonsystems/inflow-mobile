@@ -61,7 +61,7 @@ namespace InFlow_Mobile.Core.ViewModels
 
         public virtual async Task InitializeAsync()
         {
-            await Mvx.Resolve<IInitializeService>().InitializeAsync();
+            await Mvx.Resolve<IInitializeDatabaseService>().InitializeAsync();
             Initialized = true;
         }
     }

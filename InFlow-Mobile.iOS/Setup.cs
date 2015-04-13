@@ -28,7 +28,8 @@ namespace InFlow_Mobile.iOS
         /// <returns>An instance of IMvxApplication</returns>
         protected override IMvxApplication CreateApp()
         {
-            Mvx.RegisterSingleton<IInitializeService>(new InitializeDatabaseService());
+			Mvx.RegisterSingleton<IPlatform> (new Platform ());
+            Mvx.RegisterSingleton<IInitializeDatabaseService>(new InitializeDatabaseService());
             return new Core.App();
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InFlow_Mobile.Core
 {
-    public interface IInitializeService
+    public interface IInitializeDatabaseService
     {
         Task InitializeAsync();
     }
